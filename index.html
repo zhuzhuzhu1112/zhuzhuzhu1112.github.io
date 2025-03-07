@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#3498db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>简洁音乐播放器</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <h1>音乐播放器</h1>
+            </div>
+            <div class="scan-section">
+                <button id="scan-button" class="btn primary-btn">
+                    <i class="fas fa-search"></i> 扫描本地音乐
+                </button>
+                <a href="install.html" class="btn secondary-btn" style="margin-top: 10px;">
+                    <i class="fas fa-download"></i> 安装应用
+                </a>
+            </div>
+            <div class="playlist-container">
+                <h2>播放列表</h2>
+                <ul id="playlist" class="playlist">
+                    <!-- 播放列表项将通过JavaScript动态添加 -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="player-container">
+                <div class="now-playing">
+                    <div class="cover-art">
+                        <img id="cover" src="img/default-cover.jpg" alt="封面">
+                    </div>
+                    <div class="track-info">
+                        <h2 id="title">未播放</h2>
+                        <p id="artist">未知艺术家</p>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <div class="progress-container">
+                        <span id="current-time">0:00</span>
+                        <div class="progress-bar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <span id="duration">0:00</span>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button id="prev" class="control-btn">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button id="play" class="control-btn play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button id="next" class="control-btn">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                        <div class="volume-container">
+                            <i class="fas fa-volume-up"></i>
+                            <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
